@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>My tasks</h1>
+      <button id="theme-toggle" class="ghost" type="button" aria-pressed="false">Dark mode</button>
+    </header>
+
+    <p class="counts" aria-live="polite">
+      <span><b id="count-pending">0</b> pending</span>
+      <span><b id="count-done">0</b> completed</span>
+      <span><b id="count-total">0</b> total</span>
+    </p>
+
+    <form id="task-form" novalidate>
+      <div class="row">
+        <div class="grow">
+          <label for="title">Task</label>
+          <input id="title" type="text" maxlength="120" placeholder="What needs to be done?" autocomplete="off">
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Personal</option><option>Work</option><option>Study</option><option>Health</option><option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option>
+          </select>
+        </div>
+        <div>
+          <label for="due">Due date</label>
+          <input id="due" type="date">
+        </div>
+      </div>
+      <p id="form-error" class="error" role="alert"></p>
+      <div class="row">
+        <button id="submit-btn" type="submit">Add task</button>
+        <button id="cancel-edit" class="ghost" type="button" hidden>Cancel edit</button>
+      </div>
+    </form>
+
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search tasks" aria-label="Search tasks">
+      <select id="filter-status" aria-label="Filter by status">
+        <option value="all">All</option><option value="pending">Pending</option><option value="done">Completed</option>
+      </select>
+      <select id="filter-category" aria-label="Filter by category">
+        <option value="all">All categories</option>
+        <option>Personal</option><option>Work</option><option>Study</option><option>Health</option><option>Other</option>
+      </select>
+      <button id="clear-done" class="ghost" type="button">Clear completed</button>
+    </div>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
