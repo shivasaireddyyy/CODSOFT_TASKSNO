@@ -13,4 +13,4 @@ Downloadable resume button
 Contact form with validation for name, email and message
 Respects light/dark system theme and reduced-motion settings
 
-Tech used: HTML5, CSS3 (Flexbox, Grid, custom properties), JavaScript (ES6+)
+Tech used: HTML5, CSS3 (Flexbox, Grid, custom properties), JavaScript (ES6+).
