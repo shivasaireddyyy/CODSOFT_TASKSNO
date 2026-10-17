@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Frontend Developer</title>
+  <meta name="description" content="Portfolio of Your Name, a frontend developer building responsive, accessible web apps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#home">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#home">YN<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="wrap">
+        <p class="hello">Hi, I'm Your Name.</p>
+        <h1>I build <span id="typed" aria-live="off">responsive websites</span><span class="caret" aria-hidden="true"></span></h1>
+        <p class="lead">Frontend developer focused on clean layouts, accessible interfaces and fast, readable code.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" href="resume.pdf" download>Download resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap two-col">
+        <div>
+          <h2>About me</h2>
+          <p>I'm a student and self-driven developer who enjoys turning ideas into working interfaces. I learn by building, so most of what I know comes from small projects shipped end to end.</p>
+          <p>Right now I'm completing a frontend internship at CodSoft, where I'm building a portfolio, a to-do app and an expense tracker with plain HTML, CSS and JavaScript.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Location</strong> Telangana, India</li>
+          <li><strong>Focus</strong> Frontend development</li>
+          <li><strong>Learning</strong> React and TypeScript</li>
+          <li><strong>Open to</strong> Internships and junior roles</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="alt">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li style="--level:90%"><span>HTML5</span><div class="bar"><i></i></div></li>
+          <li style="--level:85%"><span>CSS3, Flexbox and Grid</span><div class="bar"><i></i></div></li>
+          <li style="--level:75%"><span>JavaScript (ES6+)</span><div class="bar"><i></i></div></li>
+          <li style="--level:60%"><span>React</span><div class="bar"><i></i></div></li>
+          <li style="--level:80%"><span>Git and GitHub</span><div class="bar"><i></i></div></li>
+          <li style="--level:70%"><span>Responsive design</span><div class="bar"><i></i></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="assets/p-todo.svg" alt="Preview of the to-do list app" loading="lazy">
+            <div class="card-body">
+              <h3>To-do list app</h3>
+              <p>Add, edit, filter and search tasks with priorities, due dates and dark mode. Saves to Local Storage.</p>
+              <a href="projects/task2-todo-app/index.html" target="_blank" rel="noopener">Open project</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/p-expense.svg" alt="Preview of the expense tracker" loading="lazy">
+            <div class="card-body">
+              <h3>Expense tracker</h3>
+              <p>Track income and spending, see live totals, and filter by category. Data stays in your browser.</p>
+              <a href="projects/task3-expense-tracker/index.html" target="_blank" rel="noopener">Open project</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/p-portfolio.svg" alt="Preview of this portfolio" loading="lazy">
+            <div class="card-body">
+              <h3>This portfolio</h3>
+              <p>A responsive single-page site with a mobile menu, validated contact form and no dependencies.</p>
+              <a href="https://github.com/your-username/CODSOFT_TASKSNO">View source</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="alt">
+      <div class="wrap two-col">
+        <div>
+          <h2>Resume</h2>
+          <p>A one-page summary of my education, projects and skills.</p>
+          <a class="btn primary" href="resume.pdf" download="Your-Name-Resume.pdf">Download resume (PDF)</a>
+        </div>
+        <ol class="timeline">
+          <li><strong>Frontend Development Intern, CodSoft</strong><span>2026 - present</span>Built three responsive web apps and published demos on LinkedIn.</li>
+          <li><strong>Your degree (update this)</strong><span>2023 - 2027</span>Your college name and field of study.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <small class="error" id="name-error"></small>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <small class="error" id="email-error"></small>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <small class="error" id="message-error"></small>
+          </div>
+          <button class="btn primary" type="submit">Send message</button>
+          <p id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Your Name. Built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <button id="to-top" aria-label="Back to top" hidden>&uarr;</button>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+:root {
+  --bg: #f5f6f4; --panel: #ffffff; --text: #1d2a24; --muted: #667a70; --line: #dfe6e1;
+  --income: #1f8a5b; --expense: #c8442f; --brand: #1d4e89; --brand-ink: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #101915; --panel: #17251f; --text: #e8f0ec; --muted: #9ab0a5; --line: #28392f; --income: #4cc58e; --expense: #ef7f6b; --brand: #7fb1ec; --brand-ink: #0c1a2a; }
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+.app { width: min(900px, 94%); margin: 0 auto; padding: 32px 0 60px; }
+h1 { margin: 0 0 18px; font-size: 1.9rem; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; border-top: 4px solid var(--brand); }
+.stat span { display: block; color: var(--muted); font-size: .88rem; }
+.stat strong { font-size: 1.6rem; }
+.stat.income { border-top-color: var(--income); }
+.stat.income strong { color: var(--income); }
+.stat.expense { border-top-color: var(--expense); }
+.stat.expense strong { color: var(--expense); }
+.stat.balance.negative strong { color: var(--expense); }
+
+form, .history { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 20px; }
+fieldset { border: 0; padding: 0; margin: 0 0 12px; display: flex; gap: 8px; }
+.type label { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border: 1.5px solid var(--line); border-radius: 999px; cursor: pointer; margin: 0; color: var(--text); font-size: .95rem; }
+.type label:has(input:checked) { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 14%, transparent); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
+.row > div { min-width: 130px; }
+.grow { flex: 1 1 220px; }
+label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+input[type="text"], input[type="number"], input[type="date"], select { width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; }
+input:focus-visible, select:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+button { padding: 10px 18px; border: 0; border-radius: 8px; background: var(--brand); color: var(--brand-ink); font: inherit; font-weight: 600; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+button:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+button.ghost { background: transparent; color: var(--text); border: 1.5px solid var(--line); }
+.error { color: var(--expense); min-height: 1.3em; margin: 8px 0; font-size: .9rem; }
+
+.history-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filters select { width: auto; }
+.note { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 500; font-size: .85rem; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.income { color: var(--income); font-weight: 600; }
+td.expense { color: var(--expense); font-weight: 600; }
+td.actions { white-space: nowrap; text-align: right; }
+td.actions button { padding: 5px 10px; font-size: .82rem; margin-left: 4px; }
+td.actions .del { color: var(--expense); }
+.empty { text-align: center; color: var(--muted); padding: 26px 0 8px; }
+
+@media (max-width: 600px) { .history-head .filters, .filters select { width: 100%; } }
+
+.back { display: inline-block; margin-bottom: 14px; color: var(--brand); font-weight: 600; text-decoration: none; }
+.back:hover { text-decoration: underline; }
